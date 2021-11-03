@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 ```toml
 [dependencies]
 [target.'cfg(target_os="android")'.dependencies]
-jni = { version = "0.9", default-features = false }
+jni = { version = "0.19", default-features = false }
 
 [lib]
 name = "rust"
@@ -189,7 +189,7 @@ After creating a new Android Studio project, running `cargo new --lib rust`, and
 -
  [dependencies]
 +[target.'cfg(target_os="android")'.dependencies]
-+jni = { version = "0.9", default-features = false }
++jni = { version = "0.19", default-features = false }
 +
 +[lib]
 +name = "rust"
