@@ -113,7 +113,7 @@ afterEvaluate {
 
 ## Diff
 
-After creating a new Android Studio project and running `cargo new --lib rust`, here are the diffs:
+After creating a new Android Studio project, running `cargo new --lib rust`, and creating `.cargo/config.toml`, here are the diffs:
 ```diff
 --- HelloRustBase/app/build.gradle	2021-11-03 11:26:31.000000000 -0500
 +++ HelloRust/app/build.gradle	2021-11-03 11:26:41.000000000 -0500
