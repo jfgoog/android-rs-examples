@@ -84,19 +84,10 @@ pub mod android {
 
 ## Gradle setup
 
-* Edit the top-level `build.gradle` file, and add the following at the top:
+* Edit the top-level `build.gradle` file, and add the following to the list of plugins:
 
-```groovy
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath 'org.mozilla.rust-android-gradle:plugin:0.9.2'
-    }
-}
+```
+id 'org.mozilla.rust-android-gradle.rust-android' version '0.9.2' apply false
 ```
 
 * Edit `app/build.gradle`.
@@ -107,7 +98,7 @@ buildscript {
 cargo {
     module = "src/main/rust"
     libname = "rust"
-    targets = ["arm", "x86", "arm64"]
+    targets = targets = ["arm", "arm64", "x86", "x86_64"]
 }
 
 afterEvaluate {
