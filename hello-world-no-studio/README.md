@@ -85,6 +85,10 @@ You will need 4 files in app/src/main:
 * res/layout/activity_main.xml
 * res/layout/styles.xml
 
+## Rust Code
+
+Exactly the same as https://github.com/jfgoog/android-rs-examples/blob/main/hello-world-android-studio/README.md#rust-setup
+
 ## Build and run
 
 * `./gradlew installDebug`

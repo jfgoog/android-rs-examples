@@ -24,6 +24,7 @@ export ANDROID_HOME=${PREBUILT}/android_sdk
 alias sdkmanager="${PREBUILT}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME}"
 
 yes | sdkmanager 'platforms;android-32'
+sdkmanager 'ndk;24.0.8215888'
 
 curl -O -L https://services.gradle.org/distributions/gradle-7.4.2-bin.zip
 unzip gradle-7.4.2-bin.zip
