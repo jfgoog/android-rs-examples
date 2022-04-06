@@ -52,6 +52,7 @@ plugins {
     id 'com.android.application' version '7.1.0' apply false
     id 'com.android.library' version '7.1.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.5.30' apply false
+    id 'org.mozilla.rust-android-gradle.rust-android' version '0.9.2' apply false
 }
 
 task clean(type: Delete) {
@@ -81,6 +82,24 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+}
+
+cargo {
+    module = "src/main/rust"
+    libname = "rust"
+    targets = ["arm", "x86", "x86_64", "arm64"]
+}
+
+afterEvaluate {
+    // The `cargoBuild` task isn't available until after evaluation.
+    android.applicationVariants.all { variant ->
+        def productFlavor = ""
+        variant.productFlavors.each {
+            productFlavor += "${it.name.capitalize()}"
+        }
+        def buildType = "${variant.buildType.name.capitalize()}"
+        tasks["generate${productFlavor}${buildType}Assets"].dependsOn(tasks["cargoBuild"])
+    }
 }
 ```
 
