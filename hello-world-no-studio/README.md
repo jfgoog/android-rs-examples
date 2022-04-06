@@ -7,9 +7,14 @@ Work in progress. No Rust yet.
 ### Android SDK and Gradle
 
 * Install Java
-* Install Android command-line tools. Use the SDK manager to install an SDK.
+* Install Android command-line tools.
+* Use the SDK manager to install the SDK and NDK.
+```
+sdkmanager 'platforms;android-32'
+sdkmanager 'ndk;24.0.8215888'
+```
 * Install Gradle
-* See download.sh for what I did on a Mac
+* See [download.sh](./download.sh) and [env.sh](./env.sh) for what I did on a Mac.
 
 ### Rust
 
@@ -58,6 +63,7 @@ task clean(type: Delete) {
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.mozilla.rust-android-gradle.rust-android'
 }
 
 android {
@@ -69,6 +75,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    ndkVersion '24.0.8215888'
 }
 
 dependencies {
@@ -80,10 +87,10 @@ dependencies {
 ## App code
 
 You will need 4 files in app/src/main:
-* AndroidManifest.xml
-* java/com/example/helloworld/MainActivity.kt
-* res/layout/activity_main.xml
-* res/layout/styles.xml
+* [AndroidManifest.xml](app/src/main/AndroidManifest.xml)
+* [java/com/example/helloworld/MainActivity.kt](app/src/main/java/com/example/helloworld/MainActivity.kt)
+* [res/layout/activity_main.xml](app/src/main/res/layout/activity_main.xml)
+* [res/layout/styles.xml](app/src/main/res/layout/styles.xml)
 
 ## Rust Code
 
