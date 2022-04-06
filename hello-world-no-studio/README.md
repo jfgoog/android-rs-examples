@@ -27,7 +27,7 @@ sdkmanager 'ndk;24.0.8215888'
 Refer to [Android Studio docs](https://developer.android.com/studio/build) for what the gradle files are supposed to look like.
 
 * `echo no | gradle init --type basic --dsl groovy --project-name HelloWorld`
-* [settings.gradle]
+* [settings.gradle](settings.gradle)
 ```groovy
 pluginManagement {
     repositories {
@@ -46,7 +46,7 @@ dependencyResolutionManagement {
 rootProject.name = "HelloWorld"
 include ':app'
 ```
-* [build.gradle]
+* [build.gradle](build.gradle)
 ```groovy
 plugins {
     id 'com.android.application' version '7.1.0' apply false
@@ -58,7 +58,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 ```
-* [app/build.gradle]
+* [app/build.gradle](app/build.gradle)
 ```groovy
 plugins {
     id 'com.android.application'
