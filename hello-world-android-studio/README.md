@@ -114,6 +114,15 @@ afterEvaluate {
 }
 ```
 
+* Edit `local.properties` to help Gradle find cargo, rustc, and python. (Note: this file should not be checked in to revision control.)
+
+```
+rust.cargoCommand=/Users/jamesfarrell/.cargo/bin/cargo
+rust.rustcCommand=/Users/jamesfarrell/.cargo/bin/rustc
+rust.pythonCommand=/usr/bin/python3
+```
+
+
 ## Diff
 
 [This change](https://github.com/jfgoog/android-rs-examples/commit/054db2e21ff89ecae787af0b4a07921f7a4d9675)
