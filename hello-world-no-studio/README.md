@@ -1,7 +1,5 @@
 # Hello World app in Rust, without using Android studio
 
-Work in progress. No Rust yet.
-
 ## One-time setup
 
 ### Android SDK and Gradle
